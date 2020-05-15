@@ -30,7 +30,7 @@ public class MovieDBResponse implements Parcelable {
     private Integer totalPages;
     @SerializedName("results")
     @Expose
-    private List<Movie> results = new ArrayList<>();
+    private List<Movie> movies = new ArrayList<>();
 
     public final static Parcelable.Creator<MovieDBResponse> CREATOR = new Creator<MovieDBResponse>() {
 
@@ -52,7 +52,7 @@ public class MovieDBResponse implements Parcelable {
         this.page = ((Integer) in.readValue((Integer.class.getClassLoader())));
         this.totalResults = ((Integer) in.readValue((Integer.class.getClassLoader())));
         this.totalPages = ((Integer) in.readValue((Integer.class.getClassLoader())));
-        in.readList(this.results, (com.khs.tmdbclientapp_java.model.Movie.class.getClassLoader()));
+        in.readList(this.movies, (com.khs.tmdbclientapp_java.model.Movie.class.getClassLoader()));
     }
 
     public MovieDBResponse() {
@@ -82,19 +82,15 @@ public class MovieDBResponse implements Parcelable {
         this.totalPages = totalPages;
     }
 
-    public List<Movie> getResults() {
-        return results;
-    }
+    public List<Movie> getMovies() { return movies; }
 
-    public void setResults(List<Movie> results) {
-        this.results = results;
-    }
+    public void setMovies(List<Movie> movies) { this.movies = movies; }
 
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeValue(page);
         dest.writeValue(totalResults);
         dest.writeValue(totalPages);
-        dest.writeList(results);
+        dest.writeList(movies);
     }
 
     public int describeContents() {

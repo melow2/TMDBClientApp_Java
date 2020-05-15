@@ -9,13 +9,13 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style parent="Theme.AppCompat.DayNight.DarkActionBar" name="MyActionBar">
+    <style parent="Theme.AppCompat.Light.DarkActionBar" name="MyActionBar">
         <item name="android:background">@color/background</item>
         <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
     </style>
 
     <style parent="TextAppearance.AppCompat.Widget.ActionBar.Title" name="MyActionBarTitleText">
-        <item name="android:textColor">#ffffff</item>
+        <item name="android:textColor">#0E0D0D</item>
     </style>
 
     <style parent="Widget.AppCompat.ActionBar.TabText" name="MyActionBarTabText">
