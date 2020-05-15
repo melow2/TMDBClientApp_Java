@@ -263,4 +263,23 @@ public class Movie extends BaseObservable implements Parcelable
         return 0;
     }
 
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "popularity=" + popularity +
+                ", voteCount=" + voteCount +
+                ", video=" + video +
+                ", posterPath='" + posterPath + '\'' +
+                ", id=" + id +
+                ", adult=" + adult +
+                ", backdropPath='" + backdropPath + '\'' +
+                ", originalLanguage='" + originalLanguage + '\'' +
+                ", originalTitle='" + originalTitle + '\'' +
+                ", genreIds=" + genreIds +
+                ", title='" + title + '\'' +
+                ", voteAverage=" + voteAverage +
+                ", overview='" + overview + '\'' +
+                ", releaseDate='" + releaseDate + '\'' +
+                '}';
+    }
 }
