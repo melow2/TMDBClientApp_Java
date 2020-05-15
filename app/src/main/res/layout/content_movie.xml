@@ -54,7 +54,7 @@
                     android:padding="16dp"
                     android:textSize="20sp"
                     app:layout_constraintTop_toBottomOf="@+id/tvMovieTitle"
-                    android:text="@{secondaryMovie.voteAverage}"
+                    android:text="@{Double.toString(secondaryMovie.voteAverage)}"
                     android:layout_marginStart="16dp"
                     app:layout_constraintLeft_toLeftOf="parent"
                     tools:layout_constraintTop_creator="1" />
