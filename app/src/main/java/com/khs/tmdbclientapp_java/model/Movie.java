@@ -17,6 +17,7 @@ import java.util.List;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.Parcelable.Creator;
+import android.util.Log;
 import android.widget.ImageView;
 
 import androidx.databinding.BaseObservable;
@@ -46,6 +47,7 @@ public class Movie extends BaseObservable implements Parcelable
     private String posterPath;
     @BindingAdapter("posterPath")
     public static void loadImage(ImageView imageView,String imageURL){
+        Log.d("DEBUG",imageURL);
         Glide.with(imageView.getContext())
                 .load(imageURL)
                 .placeholder(R.drawable.ic_launcher_background)
@@ -148,7 +150,7 @@ public class Movie extends BaseObservable implements Parcelable
 
     @Bindable
     public String getPosterPath() {
-        return posterPath;
+        return IMAGE_BASE_URL + posterPath;
     }
 
     public void setPosterPath(String posterPath) {
