@@ -7,6 +7,9 @@
         <variable
             name="movie"
             type="com.khs.tmdbclientapp_java.model.Movie" />
+        <variable
+            name="handlers"
+            type="com.khs.tmdbclientapp_java.view.handler.MovieRecyclerViewHandler" />
     </data>
 
     <LinearLayout
@@ -16,6 +19,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvMovie"
+            android:onClick="@{(v)->handlers.onItemClicked(v,movie)}"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
