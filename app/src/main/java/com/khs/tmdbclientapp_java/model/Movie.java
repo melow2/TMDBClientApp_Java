@@ -7,6 +7,7 @@ import com.bumptech.glide.Glide;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -47,7 +48,6 @@ public class Movie extends BaseObservable implements Parcelable
     private String posterPath;
     @BindingAdapter("posterPath")
     public static void loadImage(ImageView imageView,String imageURL){
-        Log.d("DEBUG",imageURL);
         Glide.with(imageView.getContext())
                 .load(imageURL)
                 .placeholder(R.drawable.ic_launcher_background)
@@ -71,7 +71,7 @@ public class Movie extends BaseObservable implements Parcelable
     private String originalTitle;
     @SerializedName("genre_ids")
     @Expose
-    private List<Integer> genreIds = null;
+    private List<Integer> genreIds = new ArrayList<>();
     @SerializedName("title")
     @Expose
     private String title;
@@ -85,18 +85,15 @@ public class Movie extends BaseObservable implements Parcelable
     @Expose
     private String releaseDate;
     public final static Parcelable.Creator<Movie> CREATOR = new Creator<Movie>() {
-
         @SuppressWarnings({
                 "unchecked"
         })
         public Movie createFromParcel(Parcel in) {
             return new Movie(in);
         }
-
         public Movie[] newArray(int size) {
             return (new Movie[size]);
         }
-
     }
             ;
 
